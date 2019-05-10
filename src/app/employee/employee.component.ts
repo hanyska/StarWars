@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {EmployeesService} from '../employees/employees.service';
 import {Employee} from '../employees/employee.model';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-employee',
@@ -52,6 +53,10 @@ export class EmployeeComponent implements OnInit {
   clicked(index) {
     this.index = index;
     this.show = !this.show;
+  }
+
+  onDrop(event: CdkDragDrop<Employee[]>) {
+    moveItemInArray(this.employees, event.previousIndex, event.currentIndex);
   }
 
 }

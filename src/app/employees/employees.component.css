@@ -9,7 +9,11 @@
 }
 
 .img-box img {
-  transform: scaleX(-1) rotate(31.25deg) scale(5);
+  transform: scaleX(-1) rotate(31.5deg) scale(5);
+  -webkit-transform: scaleX(-1) rotate(31.5deg) scale(5); /* Safari & Chrome */
+  -moz-transform: scaleX(-1) rotate(31.5deg) scale(5); /* Firefox */
+  -ms-transform: scaleX(-1) rotate(31.5deg) scale(5); /* Internet Explorer */
+  -o-transform: scaleX(-1) rotate(31.5deg) scale(5); /* Opera */
   width: 100%;
   max-height: 100%;
   object-fit: contain;
