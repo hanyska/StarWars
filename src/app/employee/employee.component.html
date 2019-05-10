@@ -1,0 +1,86 @@
+<div class="row" *ngFor="let employee of employees; let i = index">
+  <div class="col-md-12 employeeinfo" (click)="clicked(i)" @slideState>
+    <h3>{{employee.name}}</h3>
+    <div class="row p-0" *ngIf="(index === i) && show " @slideState>
+      <div class="col-md-8" >
+
+        <div class="row">
+          <div class="col-md-6"><p class="info">Height: {{employee.height}}</p></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6"><p class="info">Mass: {{employee.mass}}</p></div>
+          <div class="col-md-6"><p class="info">Hair: {{employee.hair_color}}</p></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6"><p class="info">Birth Year: {{employee.birth_year}}</p></div>
+            <div class="col-md-6"><p class="info">Skin: {{employee.skin_color}}</p></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6"><p class="info">Gender: {{employee.gender}} </p></div>
+            <div class="col-md-6"><p class="info">Eye: {{employee.eye_color}}</p></div>
+          </div>
+
+        </div>
+      <div class="col-md-4">
+        <img src="https://image.flaticon.com/icons/svg/3/3901.svg" width="40%" class="mx-auto img-fluid" alt="nophoto">
+      </div>
+
+
+  </div>
+    <div class="row">
+      <div class="img-box">
+        <img [src]="srcSword" >
+      </div>
+    </div>
+
+
+
+
+</div>
+
+
+<!--<div class="row" style="border: 2px solid green" *ngFor="let employee of employees; let i = index">-->
+<!--<div class="col-md-12 p-4" style="cursor: pointer" (click)="clicked(i)" @slideState><h3>{{employee.name}}</h3>-->
+<!--</div>-->
+
+<!--<div class="row" *ngIf="(index === i) && show " @slideState>-->
+<!--<div class="col-md-8" style="border: 2px solid yellow">-->
+
+<!--<div class="row" style="border: 2px solid yellow">-->
+<!--<div class="col-sm-6">Height: {{employee.height}}</div>-->
+<!--<div class="col-sm-6"></div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+<!--<div class="col-sm-6">Mass: {{employee.mass}}</div>-->
+<!--<div class="col-sm-6">Hair: {{employee.hair_color}}/div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+<!--<div class="col-sm-6">Birth Year: {{employee.birth_year}}</div>-->
+<!--<div class="col-sm-6">Skin: {{employee.skin_color}}</div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+<!--<div class="col-sm-6">Gender {{employee.gender}}</div>-->
+<!--<div class="col-sm-6">Eye: {{employee.eye_color}}</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--<div class="col-md-4" style="border: 2px solid darkgoldenrod">PHOTO</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;<div class="col-md-2">Height: {{employee.height}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-md-2">Mass: {{employee.mass}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-md-2">Birth Year: {{employee.birth_year}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-md-2">Gender: {{employee.gender}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-md-2">Hair: {{employee.hair_color}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;&ndash;&gt;-->
+
+
+<!--</div>-->
+<!--</div>-->
+
