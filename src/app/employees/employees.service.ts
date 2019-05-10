@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+import {Employee} from './employee.model';
 
 
 @Injectable()
@@ -11,15 +12,11 @@ export class EmployeesService {
   constructor(private http: HttpClient) {
   }
 
-  fetchData() {
+  fetchData(): Observable<Employee[]> {
     const header = new HttpHeaders({'Content-Type':  'application/json'});
     return this.http.get(this.url, {headers: header}).pipe(map((response) => {
-      return response['results'];
+      return <Employee[]>response['results'];
     }))
     ;
-  }
-
-  fetchDataById( id: number): Observable<any> {
-    return this.http.get(this.url + id);
   }
 }
