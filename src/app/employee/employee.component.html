@@ -1,43 +1,56 @@
-<div cdkDropList (cdkDropListDropped)="onDrop($event)">
-  <div class="row" *ngFor="let employee of employees; let i = index" cdkDrag>
-    <div class="col-md-12 employeeinfo" (click)="clicked(i)">
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" >
+  <div
+    class="row example-box"
+    *ngFor="let employee of employees"
+    cdkDrag
+    (cdkDragStarted)="dragStarted($event)"
+    (cdkDragEnded)="dragEnded($event)">
+    <div class="col-md-12">
+      <mat-accordion >
+        <mat-expansion-panel hideToggle class="bg-dark text-light">
+          <mat-expansion-panel-header  collapsedHeight="90px" expandedHeight="90px" class="text-light" style="font-size: 28px;">{{employee.name}}</mat-expansion-panel-header>
 
-      <h3>{{employee.name}}</h3>
-      <div class="row p-0" *ngIf="(index === i) && show " @slideState>
-        <div class="col-md-8">
+          <div class="row mx-auto employee">
+            <div class="col-md-9">
 
-          <div class="row">
-            <div class="col-md-6"><p class="info">Height: {{employee.height}}</p></div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6"><label class="empllabel">Height:</label> {{employee.height}}</div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6"><label class="empllabel">Mass:</label> {{employee.mass}}</div>
+                <div class="col-md-6 col-sm-6"><label class="empllabel">Hair:</label> {{employee.hair_color}}</div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6"><label class="empllabel">Birth Year:</label> {{employee.birth_year}}</div>
+                <div class="col-md-6 col-sm-6"><label class="empllabel">Skin:</label> {{employee.skin_color}}</div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6"><label class="empllabel">Gender:</label> {{employee.gender}} </div>
+                <div class="col-md-6 col-sm-6"><label class="empllabel">Eye:</label> {{employee.eye_color}}</div>
+              </div>
+
+            </div>
+            <div class="col-md-3 py-2">
+              <img src="https://image.flaticon.com/icons/svg/3/3901.svg" width="50%" class="mx-auto img-fluid"
+                   alt="nophoto">
+            </div>
           </div>
 
-          <div class="row">
-            <div class="col-md-6"><p class="info">Mass: {{employee.mass}}</p></div>
-            <div class="col-md-6"><p class="info">Hair: {{employee.hair_color}}</p></div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6"><p class="info">Birth Year: {{employee.birth_year}}</p></div>
-            <div class="col-md-6"><p class="info">Skin: {{employee.skin_color}}</p></div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6"><p class="info">Gender: {{employee.gender}} </p></div>
-            <div class="col-md-6"><p class="info">Eye: {{employee.eye_color}}</p></div>
-          </div>
-
-        </div>
-        <div class="col-md-4">
-          <img src="https://image.flaticon.com/icons/svg/3/3901.svg" width="40%" class="mx-auto img-fluid"
-               alt="nophoto">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="img-box">
-          <img [src]="srcSword">
-        </div>
-      </div>
+        </mat-expansion-panel>
+      </mat-accordion>
 
     </div>
+
+    <div class="row" [@fadeIn]="state">
+      <div class="img-box">
+        <img [src]="srcSword">
+      </div>
+    </div>
+
   </div>
 </div>
+
+

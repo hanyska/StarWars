@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {EmployeesService} from './employees/employees.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MaterialModule} from './material.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,10 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
   imports: [
     BrowserModule,
     HttpClientModule,
+    DragDropModule,
     BrowserAnimationsModule,
-    DragDropModule
+    MaterialModule,
+
 
   ],
   providers: [EmployeesService],
