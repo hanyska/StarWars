@@ -40,7 +40,6 @@ export class EmployeeComponent implements OnInit, OnDestroy {
     this.employeesService.fetchData()
       .subscribe((response) => {
         this.employees = response;
-        console.log(response);
       });
   }
 
