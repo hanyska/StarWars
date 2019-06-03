@@ -6,11 +6,11 @@
 }
 
 .img-box img {
-  transform: rotate(31.25deg) scale(4);
-  -webkit-transform: rotate(31.25deg) scale(4); /* Safari & Chrome */
-  -moz-transform: rotate(31.25deg) scale(4); /* Firefox */
-  -ms-transform: rotate(31.25deg) scale(4); /* Internet Explorer */
-  -o-transform: rotate(31.25deg) scale(4); /* Opera */
+  transform: rotate(33.5deg) scale(4);
+  -webkit-transform: rotate(33.5deg) scale(4); /* Safari & Chrome */
+  -moz-transform: rotate(33.5deg) scale(4); /* Firefox */
+  -ms-transform: rotate(33.5deg) scale(4); /* Internet Explorer */
+  -o-transform: rotate(33.5deg) scale(4); /* Opera */
   width: 100%;
   max-height: 100%;
   object-fit: contain;
